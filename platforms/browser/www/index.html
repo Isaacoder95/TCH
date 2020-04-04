@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.min.css">
+
+  <link rel="stylesheet" href="css/farmazon_rep.css">
+  <script src="js/onsenui.js"></script>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <ons-navigator id="myNavigator" page="login.html" ></ons-navigator>
+
+    <template id="login.html">
+      <ons-page id="login">  
+        <div style="padding: 10px; "></div>
+        <center><img src="img/TCH.jpg" width="100px"></center>
+      
+        
+                 <div style="text-align: center; margin-top: 100px;">
+            <p>
+              <ons-input type="email" id="rep_correo" style=" color:white; width: 75%; text-align: center!important;" modifier="underbar" placeholder="Correo electrónico" value="" ></ons-input>
+            </p>
+            <p>
+              <ons-input type="password" id="rep_pass" style="width: 75%; text-align: center!important;" modifier="underbar"  placeholder="Contraseña" value=""></ons-input>
+            </p>
+          </div>
+          <br><br><br>
+        <center><ons-button class="button--cta" style="background: teal" onclick="login()" >Iniciar Sesión</ons-button></center>
+
+        <div style=" color: white; position: fixed;bottom: 0;right: 0;left: 0;padding: 1em; text-align: center; background:teal;">
+            <label>Powered by TCH &reg 2018</label><br>
+            <small style="color:black;">Versión 1.1.0</small>
+        </div>
+     
+      </ons-page>
+    </template>
+     <template id="page_menu.html" >
+        <ons-page id="menu" >
+          <ons-splitter>
+          <ons-splitter-side id="m" side="left" width="220px" collapse swipeable>
+          <ons-page >
+        <ons-list>
+        
+        <ons-list-item onclick="fn.load('home.html')" tappable>
+          Inicio
+        </ons-list-item>
+        <br>
+        <ons-list-item onclick="fn.load('invernadero.html')" tappable>
+          Invernadero
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('automatizacion.html')" tappable>
+          Automatización
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('estadisticas.html')" tappable>
+          Estadistícas Relaes
+        </ons-list-item>
+       	<br>
+        <ons-list-item onclick="fn.load('info.html')" tappable>
+          Información
+        </ons-list-item>
+        
+        
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+
+<template id="home.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center" style="font-family: IMPACT; text-align: center,">
+      Telecultivos de México
+      </div>
+    </ons-toolbar>
+    <center> <div class="n"><p> <b><font color="BLACK" face="IMPACT" style=" font-size:80px;"><marquee width="100%" scrollamount="11" bgcolor="transparent">TCM </marquee>    </font></b></p></center>
+    <ons-carousel  swipeable auto-scroll overscrollable id="carousel" style="width: 100%; height: 50%;">
+    <ons-carousel-item style="background-image: url(img/img1.jpg);-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; ">
+      <div style="text-align: center; font-size: 30px; margin-top: 20px; color: #fff;">
+
+      </div>
+    </ons-carousel-item>
+    <ons-carousel-item style="background-image: url(img/img2.jpg);-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; ">
+      <div style="text-align: center; font-size: 30px; margin-top: 20px; color: #fff;">
+
+      </div>
+    </ons-carousel-item>
+
+    <ons-carousel-item style="background-image: url(img/img3.jpg);-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; ">
+      <div style="text-align: center; font-size: 30px; margin-top: 20px; color: #fff;">
+
+      </div>
+    </ons-carousel-item>
+    
+  </ons-carousel>
+  <ons-card>
+
+    <div class="title">
+     
+    </div>
+    <div class="content">
+      <div class="card-body">
+                  <p class="card-text" align="justify">Es una tecnología que es capaz de monitorear y controlar diversas variables como son la humedad y temperatura dentro de cualquier invernadero.  el sistema es capaz de interpretar datos de humedad y temperatura a distancia mediante un sistema de comunicación integral con Arduino ,cualquier smartphone y una plataforma Web.</p>
+               
+                </div>
+      
+    </div>
+  </ons-card>
+
+</template>
+
+<template id="invernadero.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center" style="font-family: IMPACT; text-align: center,">
+      INVERNADERO
+      </div>
+    </ons-toolbar>
+
+    
+</template>
+
+<template id="automatizacion.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center" style="font-family: IMPACT; text-align: center,">
+      AUTOMATIZACIÓN
+      </div>
+    </ons-toolbar>
+    <ons-page>
+  <ons-toolbar>
+    <div class="center">Panel de Control</div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-header>Modo Automático</ons-list-header>
+    <ons-list-item>
+      <div class="center">
+        Habilitar/Deshabilitar
+      </div>
+      <div class="right">
+        <ons-switch checked></ons-switch>
+      </div>
+    </ons-list-item>
+  </ons-list>
+
+  <br>
+  <ons-list>
+    <ons-list-header>Modo Manual</ons-list-header>
+    <ons-list-item>
+      <div class="center">
+        Ventilador Principal
+      </div>
+      <div class="right">
+        <ons-switch checked></ons-switch>
+      </div>
+    </ons-list-item>
+    <ons-list-item>
+      <div class="center">
+        Bomba de Agua
+      </div>
+      <div class="right">
+        <ons-switch></ons-switch>
+      </div>
+    </ons-list-item>
+    
+  </ons-list>
+  <br>
+  <br>
+    <ons-row style="margin-top: 20px;">
+      <ons-col width="40px" style="text-align: center; line-height: 31px;">
+        <ons-icon icon="md-brightness-low"></ons-icon>
+      </ons-col>
+      <ons-col>
+        <ons-range style="width: 100%;" value="50"></ons-range>
+      </ons-col>
+      <ons-col width="40px" style="text-align: center; line-height: 31px;">
+        <ons-icon icon="md-brightness-high"></ons-icon>
+      </ons-col>
+    </ons-row>
+</ons-page>
+
+</template>
+
+
+<template id="estadisticas.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center" style="font-family: IMPACT; text-align: center,">
+      	ESTADÍSTICAS
+      </div>
+    </ons-toolbar>
+</template>
+
+<template id="info.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center" style="font-family: IMPACT; ">
+      	INFORMACIÓN
+      </div>  
+    </ons-toolbar>
+  <ons-card>
+   <center> <img  src="img/TCH.jpg" style="width: 200px; "></center>
+    <div class="title">
+     
+    </div>
+    <div class="content">
+      
+      <ons-list>
+        <ons-list-header>Info.</ons-list-header>
+       
+        <ons-list-item>Licencia</ons-list-item>
+        
+      </ons-list>
+
+      <br>
+      <div>
+       <center><ons-button><ons-icon icon="ion-thumbsup"></ons-icon></ons-button>
+        <ons-button><ons-icon icon="ion-share"></ons-icon></ons-button></center> 
+      </div>
+      <br><br>
+      <ons-list>
+        <ons-list><center><label>© 2018 TCH <span style="color: green;">v. 1.0.1</span> </label></center></ons-list>
+       </ons-list>
+    </div>
+  </ons-card>
+
+
+            
+</template>
+
+           <ons-fab position="bottom right" onclick="cerrarSesion()"> 
+              <ons-icon icon="md-power"></ons-icon>
+            </ons-fab>
+        </ons-page>
+    </template>
+   
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript">
+      app.initialize();
+
+
+      window.fn = {};
+
+      window.fn.open = function() {
+        var m = document.getElementById('m');
+        m.open();
+      };
+
+      window.fn.load = function(page) {
+       	var content = document.getElementById('content');
+ 		var menu = document.getElementById('m');
+  		content.load(page)
+    	.then(menu.close.bind(menu));
+
+      };
+
+      document.addEventListener('init', function(event){
+        if (event.target.id == "home" ) {
+            renderItems();
+            deleteItem();
+        }
+      });
+
+
+      var prev = function() {
+  var carousel = document.getElementById('carousel');
+  carousel.prev();
+};
+
+var next = function() {
+  var carousel = document.getElementById('carousel');
+  carousel.next();
+};
+
+ons.ready(function() {
+  var carousel = document.addEventListener('postchange', function(event) {
+    console.log('Changed to ' + event.activeIndex)
+  });
+});
+
+
+       
+    </script>
+</body>
+</html>

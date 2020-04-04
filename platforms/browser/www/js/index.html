@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="css/college_manager.css">
+  <link rel="stylesheet" href="css/farmazon_rep.css">
+  <script src="js/onsenui.js"></script>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <ons-navigator id="myNavigator" page="login.html" ></ons-navigator>
+
+    <template id="login.html">
+      <ons-page id="login">  
+        <div style="padding: 10px; "></div>
+        <center><img src="img/TCH.jpg" width="100px"></center>
+      
+        
+                 <div style="text-align: center; margin-top: 100px;">
+            <p>
+              <ons-input type="email" id="rep_correo" style=" color:white; width: 75%; text-align: center!important;" modifier="underbar" placeholder="Correo electrónico" value="" ></ons-input>
+            </p>
+            <p>
+              <ons-input type="password" id="rep_pass" style="width: 75%; text-align: center!important;" modifier="underbar"  placeholder="Contraseña" value=""></ons-input>
+            </p>
+          </div>
+          <br><br><br>
+        <ons-button class="button--cta" style="background: teal" onclick="login()" >Iniciar Sesión</ons-button>
+
+        <div style=" color: white; position: fixed;bottom: 0;right: 0;left: 0;padding: 1em; text-align: center; background:teal;">
+            <label>Powered by TCH &reg 2018</label><br>
+            <small style="color:black;">Versión 1.1.0</small>
+        </div>
+     
+      </ons-page>
+    </template>
+     <template id="page_menu.html" >
+        <ons-page id="menu" >
+          <ons-splitter>
+          <ons-splitter-side id="m" side="left" width="220px" collapse swipeable>
+          <ons-page >
+        <ons-list>
+        
+        <ons-list-item onclick="fn.load('')" tappable>
+          Inicio
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('')" tappable>
+          Invernadero
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('')" tappable>
+          Automatización
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('')" tappable>
+          Estadistícas Relaes
+        </ons-list-item>
+        <ons-list-item onclick="" tappable>
+          
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('')" tappable>
+          Información
+        </ons-list-item>
+        
+        
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+</ons-splitter>
+
+<template id="home.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center" style="font-family: IMPACT; text-align: center,">
+      TCH  
+      </div>
+    </ons-toolbar>
+</template>
+
+           <ons-fab position="bottom right" onclick="cerrarSesion()"> 
+              <ons-icon icon="md-power"></ons-icon>
+            </ons-fab>
+        </ons-page>
+    </template>
+   
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript">
+       app.initialize();
+
+
+      window.fn = {};
+
+      window.fn.open = function() {
+        var m = document.getElementById('m');
+
+        m.open();
+      };
+
+      window.fn.load = function(page) {
+        var content = document.getElementById('content');
+        var menu = document.getElementById('menu');
+        content.load(page)
+          .then(menu.close.bind(menu));
+      };
+
+
+      document.addEventListener('init', function(event){
+        if (event.target.id == "home" ) {
+            renderItems();
+            deleteItem();
+        }
+      });
+       
+    </script>
+</body>
+</html>
