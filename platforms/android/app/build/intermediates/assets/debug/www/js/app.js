@@ -1,5 +1,9 @@
-
-
+/*
+ *
+ *Developed By ICN
+ *
+ *
+*/
 
 /* PROCESOS GENERICOS */
 	function cambiar_menu(pagina){
