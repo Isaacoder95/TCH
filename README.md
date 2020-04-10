@@ -1,5 +1,5 @@
 # TCH
-Control Arduino sensors.
+Control your Arduino sensors.
 
 
 
